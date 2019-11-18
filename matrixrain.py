@@ -4,6 +4,7 @@ import random
 SIZE=10
 HEIGHTOFTEXT=15
 DIMRATE=0.95
+textstoshow=list(range(12352, 12543))+(list(range(48, 57))*10) #more numbers
 #maybe random?
 
 class rainstream:
@@ -19,7 +20,8 @@ class rainstream:
         self.lasty=0
     def rain(self):
         self.lasty=self.lasty+HEIGHTOFTEXT
-        self.text.append(chr(random.randint(1, 1000)))
+        #self.text.append(chr(random.randint(12352, 12543)))
+        self.text.append(chr(random.choice(textstoshow)))
         self.fills.append([int('39', 16), int('FF', 16), int('14', 16)])
         self.particles.append(canvas.create_text(self.startx, self.lasty, text=self.text[len(self.text)-1], fill='#39FF14'))
         for index, text in enumerate(self.particles):
