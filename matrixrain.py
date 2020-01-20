@@ -4,7 +4,7 @@ import random
 SIZE=10
 HEIGHTOFTEXT=15
 DIMRATE=0.95
-textstoshow=list(range(12352, 12543))+(list(range(48, 57))*10) #more numbers
+textstoshow=list(range(12352, 12543))+(list(range(48, 57))*10)
 #maybe random?
 
 class rainstream:
@@ -37,8 +37,6 @@ class rainstream:
             canvas.itemconfigure(text, fill=fill)
         if self.lasty<self.endy:
             return False
-        else:
-            return True
     def erase(self):
         for particle in self.particles:
             canvas.delete(particle)
